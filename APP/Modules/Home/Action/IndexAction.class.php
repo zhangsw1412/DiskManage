@@ -11,6 +11,7 @@ Class IndexAction extends Action
 	 */
 	public function index()
 	{
+		$this->test=time();
 		$this->display();
 	}
 }
