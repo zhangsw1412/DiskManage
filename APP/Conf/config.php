@@ -1,7 +1,7 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
-	////项目分组Home是前台，Admin是后台
+	//项目分组Home是前台，Admin是后台
 	'APP_GROUP_LIST'=>'Home',
 
 	//设置默认分组为前台项目
