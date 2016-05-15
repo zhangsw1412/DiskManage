@@ -13,16 +13,16 @@
 </head>
 <body>
       <br><br><br><br><br><br><br><br>
-      <h1 style="color:white;text-align:center;font-size:40px">光盘阵列管理后台</h1>
-  <form method="post" action="index.html" class="login">
+      <h1 style="color:rgb(168,167,168);text-align:center;font-size:40px">光盘阵列管理后台</h1>
+  <form method="post" action="{:U(GROUP_NAME.'/Login/login')}" class="login">
     <p>
       <label for="login">Username:</label>
-      <input type="text" name="username" id="login" value="">
+      <input type="text" name="username" id="login" value="" onkeydown="if(event.keyCode==13){this.submit();}">
     </p>
 
     <p>
       <label for="password">Password:</label>
-      <input type="password" name="password" id="password" value="">
+      <input type="password" name="password" id="password" value="" onkeydown="if(event.keyCode==13){this.submit();}">
     </p>
 
     <p class="login-submit">
