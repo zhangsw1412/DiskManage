@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * 首页控制器
+ */
+Class IndexAction extends Action{
+  /**
+   * 首页视图
+   * @return [type] [description]
+   */
+	public function index(){
+		$anli=D('case');
+		
+		$goodAnli=$anli->order("click DESC")->where("del=0")->limit(8)->select();
+		$newAnli=$anli->order("add_time DESC")->where("del=0")->limit(8)->select();
+		$this->assign('goodAnli',$goodAnli);
+		$this->assign('newAnli',$newAnli);
+		$this->assign('menuName1','');
+		$this->assign('menuUrl1','#');
+		//p($anli);die;
+		$this->display();
+	}
+
+	//获取分类
+	public function getCates()
+	{
+		if(!$cates=S('menubar_cates'))
+		{
+			$cates=M('cate')->order('sort')->select();
+			import('Class.Category',APP_PATH);
+			$cates=Category::unlimited4Layer($cates);
+			S('menubar_cates',$cates,600);
+		}
+		
+		$this->ajaxReturn($cates,'JSON');
+	}
+}
+
+?>

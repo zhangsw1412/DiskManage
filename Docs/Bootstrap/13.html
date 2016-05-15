@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1,maximum-scale=1, user-scalable=no"><!-- 这句话会让移动端访问看起来清楚 -->
+	<title>Bootstrap-列表组面板嵌入组件</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- 列表组组件 -->
+<!-- 基本 -->
+<ul class="list-group">
+	<li class="list-group-item">1起始</li>
+	<li class="list-group-item">2第二条 <span class="badge">10</span></li>
+	<li class="list-group-item">3第三排</li>
+	<li class="list-group-item">4末尾</li>
+</ul>
+<!-- 链接和首选 -->
+<div class="list-group">
+	<a href="#" class="list-group-item list-group-item-success">1起始</a>
+	<a href="#" class="list-group-item">2第二条 <span class="badge">10</span></a>
+	<a href="#" class="list-group-item active">3第三排</a>
+	<a href="#" class="list-group-item disabled">4末尾</a>
+</div>
+<!-- 按钮式列表 -->
+<div class="list-group">
+	<button class="list-group-item">1起始</button>
+	<button class="list-group-item">2第二条 <span class="badge">10</span></button>
+	<button class="list-group-item active">3第三排</button>
+	<button class="list-group-item">4末尾</button>
+</div>
+<!-- 定制内容 -->
+<div class="list-group">
+	<a href="#" class="list-group-item list-group-item-success">
+		<h4>列表标题</h4>
+		<p>详细内容...</p>
+	</a>
+	<a href="#" class="list-group-item">2第二条 <span class="badge">10</span></a>
+	<a href="#" class="list-group-item active">3第三排</a>
+	<a href="#" class="list-group-item disabled">4末尾</a>
+</div>
+
+
+<!-- 面板组件 -->
+<!-- 基本 -->
+<div class="panel panel-danger"><!-- 可以用不同的情景类 -->
+	<div class="panel-heading">
+		<h3 class="panel-title">标题区域</h3>
+	</div>
+	<div class="panel-body">
+		面板容器
+	</div>
+	<div class="panel-footer">
+		这里是底部
+	</div>
+</div>
+<!-- 表格类面板 -->
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">标题区域</h3>
+	</div>
+	<div class="panel-body">
+		面板容器
+	</div>
+	<table class="table">
+		<tr>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>2</td>
+			<td>1</td>
+		</tr>
+	</table>
+	<div class="panel-footer">
+		这里是底部
+	</div>
+</div>
+<!-- 列表类面板 -->
+<div class="panel panel-danger"><!-- 可以用不同的情景类 -->
+	<div class="panel-heading">
+		<h3 class="panel-title">标题区域</h3>
+	</div>
+	<div class="panel-body">
+		面板容器
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">1起始</li>
+		<li class="list-group-item">2第二条 <span class="badge">10</span></li>
+		<li class="list-group-item">3第三排</li>
+		<li class="list-group-item">4末尾</li>
+	</ul>
+	<div class="panel-footer">
+		这里是底部
+	</div>
+</div>
+
+
+<!-- 响应式嵌入组件 -->
+<div class="embed-responsive embed-responsive-16by9"><!-- 16比9响应 -->
+	<embed src="" type="">
+</div>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1,maximum-scale=1, user-scalable=no"><!-- 这句话会让移动端访问看起来清楚 -->
+	<title>Bootstrap-栅格系统</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- 布局容器 -->
+
+<!-- 固定宽度 -->
+<!-- <div class="container">
+	
+</div> -->
+<!-- 100%宽度 -->
+<!-- <div class="container-fluid">
+	
+</div> -->
+
+<!-- <div class="container">
+	<div class="row">
+		<div class="col-md-1">1</div>
+		<div class="col-md-1">2</div>
+		<div class="col-md-1">3</div>
+		<div class="col-md-1">4</div>
+		<div class="col-md-1">5</div>
+		<div class="col-md-1">6</div>
+		<div class="col-md-1">7</div>
+		<div class="col-md-1">8</div>
+		<div class="col-md-1">9</div>
+		<div class="col-md-1">10</div>
+		<div class="col-md-1">11</div>
+		<div class="col-md-1">12</div>
+	</div>
+	<div class="row">
+		<div class="col-md-9">9</div>
+		<div class="col-md-3">3</div>
+	</div>
+</div> -->
+
+<!-- <div class="container">
+	<div class="row">
+		<div class="col-lg-3 col-md-4 col-sm-6">a</div>
+		<div class="col-lg-3 col-md-4 col-sm-6">a</div>
+		<div class="col-lg-3 col-md-4 col-sm-6">a</div>
+		<div class="col-lg-3 col-md-4 col-sm-6">a</div>
+	</div>
+</div> -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">8</div>
+		<!-- 这里添加了一个列偏移 -->
+		<div class="col-md-3 col-md-offset-1">3</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-9">
+			<!-- 可以嵌套 -->
+			<div class="col-md-4">4</div>
+			<div class="col-md-4">4</div>
+			<div class="col-md-4">4</div>
+		</div>
+		<div class="col-md-3">3</div>
+	</div>
+
+	<div class="row">
+		<!-- 移位，向右为push，向左为pull -->
+		<div class="col-md-9 col-md-push-3">9</div>
+		<div class="col-md-3 col-md-pull-9">3</div>
+	</div>
+</div>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

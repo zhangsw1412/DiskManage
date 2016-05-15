@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1,maximum-scale=1, user-scalable=no"><!-- 这句话会让移动端访问看起来清楚 -->
+	<title>Bootstrap-按钮和折叠插件</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- 单个切换 -->
+<button class="btn btn-primary" data-toggle="button" autocomplete="off">单个切换</button>
+
+<!-- 单选按钮 -->
+<div class="btn-group" data-toggle="buttons">
+	<label for="" class="btn btn-primary active">
+		<input type="radio" name="sex" value="男" checked>男
+	</label>
+	<label for="" class="btn btn-primary">
+		<input type="radio" name="sex" value="女">女
+	</label>
+</div>
+
+<!-- 复选按钮 -->
+<div class="btn-group" data-toggle="buttons">
+	<label for="" class="btn btn-primary active">
+		<input type="checkbox" name="aa" value="11" checked>11
+	</label>
+	<label for="" class="btn btn-primary">
+		<input type="checkbox" name="aa" value="22">22
+	</label>
+	<label for="" class="btn btn-primary">
+		<input type="checkbox" name="aa" value="33">33
+	</label>
+	<label for="" class="btn btn-primary">
+		<input type="checkbox" name="aa" value="44">44
+	</label>
+</div>
+
+
+<!-- 折叠 -->
+<button class="btn btn-primary" data-toggle="collapse" data-target="#zhedie">Bootstrap</button>
+<div class="collapse" id="zhedie">
+	<div class="well">
+		这里写点内容
+	</div>
+</div>
+
+<!-- 手风琴折叠 -->
+<div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">第一部分链接</a>
+			</h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse">
+			<div class="panel-body">
+				第一部分内容
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a href="#collapse2" data-toggle="collapse" data-parent="#accordion">第2部分链接</a>
+			</h4>
+		</div>
+		<div id="collapse2" class="panel-collapse collapse">
+			<div class="panel-body">
+				第2部分内容
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a href="#collapse3" data-toggle="collapse" data-parent="#accordion">第3部分链接</a>
+			</h4>
+		</div>
+		<div id="collapse3" class="panel-collapse collapse">
+			<div class="panel-body">
+				第3部分内容
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

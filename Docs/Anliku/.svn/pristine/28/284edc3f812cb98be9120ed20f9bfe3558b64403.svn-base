@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/Index_index.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css" />
+	<title>案例库浏览系统 - 首页</title>
+	<link rel="shortcut icon" href="__PUBLIC__/images/favicon.ico" /> 
+</head>
+<body>
+
+        <div class="col-xs-12 col-md-12" style="background-color:#C0D4DF;">
+		<div class="col-xs-12"  >
+			<div class="col-sm-8 col-md-10 visible-sm visible-md visible-lg">
+				<h2 style="margin:20px auto 10px auto;text-align:center;color:#fff;font-size:35px;font-weight: bold;text-shadow: 0px 1px 1px #555;">
+					<img src="__PUBLIC__/images/logo.png" style="width:100px;height:100px;" ></img>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					案例库浏览系统
+				</h2>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<nav class="navbar navbar-default" role="navigation" >
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse"  data-target="#example-navbar-collapse">
+					 <span class="sr-only">切换导航</span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand visible-xs " href="#">案例库浏览系统</a>
+				</div>
+				<div class="collapse navbar-collapse"  id="example-navbar-collapse">
+					  <ul class="nav navbar-nav">
+						<li class="active"><a href="#">首页</a></li>
+						<li class="dropdown">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							案例库
+							<span class="caret"></span>
+						 </a>
+						  <ul class="dropdown-menu" role="menu">
+							<li><a href="#">云计算</a></li>
+							<li><a href="#">物联网</a></li>
+							<!--
+							<li class="divider"></li>
+							<li class="dropdown-header">Nav header</li>
+							-->
+							<li><a href="#">机器学习</a></li>
+						  </ul>
+						</li>
+						<li><a href="#about">用户中心</a></li>
+						<li><a href="#contact">联系我们</a></li>
+					  </ul>
+
+				  </div>
+			  	</nav>
+		  </div>
+        </div><!--/.nav-collapse -->
+      </div>
+
+      <div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">案例库网站</h2>
+		<h2 class="form-signin-heading">案例库网站</h2>
+		<h2 class="form-signin-heading">案例库网站</h2>
+		<h2 class="form-signin-heading">案例库网站</h2>
+		<h2 class="form-signin-heading">案例库网站</h2>
+		<h2 class="form-signin-heading">案例库网站</h2>
+		<h2 class="form-signin-heading">案例库网站</h2>
+		<h2 class="form-signin-heading">案例库网站</h2>
+		<h2 class="form-signin-heading">案例库网站</h2>
+		<h2 class="form-signin-heading">案例库网站</h2>
+        <input type="text" id="inputMessage" class="form-control" placeholder="关键词" autofocus>
+		<input type="text" id="inputUrl" class="form-control" placeholder="链接（用于有多义项的词条搜索）" autofocus>
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="searchBaike()">搜索</button>
+		<h4 class="form-signin-heading" id="showMessage"></h4>
+      </form>
+
+    </div> <!-- /container -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script>
+		var outputLabel=$("#showMessage");
+		
+		//搜索百科内容
+		function searchBaike(){
+			var keyword=$("#inputMessage").val();
+			var url=$("#inputUrl").val();
+			$.ajax({
+				url:"searchBaike.php?keyword="+keyword+"&url="+url,
+				success:function(res){
+					outputLabel.html(res);
+				},
+				error:function(res){
+					outputLabel.html(res);
+				}
+			});
+			$("#inputMessage").focus();
+		}
+	</script>
+</body>
+</html>

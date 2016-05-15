@@ -1,0 +1,9 @@
+[ 2016-05-15T18:11:50+08:00 ] 0.0.0.0 /Anliku/Home/Index/getCates
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Anliku\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tb_cate` [ RunTime:0.031002s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wamp\www\Anliku\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `tb_cate` ORDER BY sort  [ RunTime:0.003000s ]
+

@@ -1,0 +1,22 @@
+<div class="page-header">
+	<h4>案例列表</h4>
+</div>
+<div class="col-md-10">
+	<div class="list-group">
+	   <a href="#" class="list-group-item active">
+		  <h4 class="list-group-item-heading">
+				案例列表
+		  </h4>
+	   </a>
+		<foreach name="anliList" item="anli">
+			<a href={:U(GROUP_NAME."/Anli/info?anliid=".$anli.id)} class="list-group-item">
+				<h4 class="list-group-item-heading">
+					{$anli.title}
+				</h4>
+				<p class="list-group-item-text">
+					{$anli.key_words}
+				</p>
+			</a>
+		</foreach>
+	</div>
+</div>

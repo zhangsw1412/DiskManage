@@ -1,0 +1,66 @@
+body
+{
+  font-family:"Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei";
+}
+.case-normal-fonter
+{
+  font-size:1.3em;
+}
+.case-mid-fonter{
+  font-size:45px;
+}
+.case-big-fonter
+{
+  font-size:60px;
+}
+.case-siyuan-fonter
+{
+  /*font-family: "source-han-sans-simplified-c","Helvetica Neue",Arial,'Microsoft Yahei','Hiragino Sans GB',
+  'WenQuanYi Micro Hei',sans-serif;*/
+  /*font-family: "source-han-sans-simplified-c",sans-serif;*/
+  /*font-family:'SiYuan-ExtraLig228f798244fdc';*/
+  font-family:'SiYuan-ExtraLig228fb93f04fdc';
+}
+.case-broad-fonter
+{
+  letter-spacing: 1px;
+}
+#case-navbar
+{
+  -moz-box-shadow: 0 2 5px rgba(73, 70, 69, 0.94);
+
+  -webkit-box-shadow: 0 2 5px rgba(73, 70, 69, 0.94);
+
+  box-shadow: 0 2 5px rgba(73, 70, 69, 0.94);
+}
+.case-link{
+  color:white;
+  font-size:1.1em;
+  text-decoration:none;
+}
+
+.case-dg-link
+{
+  color:rgb(128,128,143);
+}
+.case-link:hover,.case-dg-link:hover
+{
+  color:black;
+  text-decoration:none;
+}
+.case-title-link
+{
+  color:black;
+  text-decoration: none;
+}
+.case-title-link:hover
+{
+  color:rgb(42, 52, 96);
+  text-decoration: none;
+}
+.case-list
+{
+  line-height:2.2em;
+  padding-left:1.2em;
+  //text-align:left;
+}
