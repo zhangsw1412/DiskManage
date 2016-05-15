@@ -1,0 +1,50 @@
+<?php
+
+class LoginAction extends Action
+{
+	public function index()
+	{
+		$this->display();
+	}
+
+	public function login()
+	{
+		if(IS_POST)
+		{
+			$user=M('user');
+ 			$result=$user->where(array('username'=>I('post.username')))->find();
+ 			if(!$result||$result['password']!=I('post.password','','md5'))
+ 			{
+ 				$this->error('帐号或密码错误');
+ 			}
+ 			//更新最后一次登陆时间与ip
+ 			$data=array(
+ 				'id'=>$result['id'],
+ 				'login_time'=>time(),
+ 				'login_ip'=>get_client_ip()
+ 				);
+ 			$user->save($data);
+
+ 			session(C('USER_AUTH_KEY'),$result['id']);
+			session('username',$username);
+
+			//超级管理员识别
+			// if($result['username']==C('RBAC_SUPERADMIN'))
+			// {
+			// 	session(C('ADMIN_AUTH_KEY'),true);
+			// }
+
+			// //读取用户权限
+			// import('ORG.Util.RBAC');
+			// RBAC::saveAccessList();
+
+ 			redirect(__GROUP__);
+		}
+		else
+		{
+			$this->error('出错啦~');
+		}
+	}
+}
+
+?>

@@ -1,0 +1,9 @@
+[ 2016-03-14T21:46:44+08:00 ] 0.0.0.0 /Anliku/Admin/Category/updateCateHandle
+ERR: Model:update您所请求的方法不存在！
+
+[ 2016-03-14T21:48:41+08:00 ] 0.0.0.0 /Anliku/Admin/Category/delCate/id/3
+ERR: Model:del您所请求的方法不存在！
+
+[ 2016-03-14T23:56:45+08:00 ] 0.0.0.0 /Anliku/Home/Login/logout
+ERR: 非法操作:logout
+

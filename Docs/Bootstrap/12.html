@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1,maximum-scale=1, user-scalable=no"><!-- 这句话会让移动端访问看起来清楚 -->
+	<title>Bootstrap-进度条媒体对象和Well组件</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Well -->
+<div class="well well-lg">Bootstrap</div>
+
+<!-- 进度条组件 -->
+<!-- 基本 -->
+<div class="progress">
+	<div class="progress-bar" style="width:60%">60%</div>
+</div>
+<!-- 最低值进度条 -->
+<div class="progress">
+	<div class="progress-bar" style="min-width:20px;width:0%">0%</div>
+</div>
+<div class="progress">
+	<div class="progress-bar" style="min-width:20px;width:60%">60%</div>
+</div>
+<!-- 结合情景的进度条 -->
+<div class="progress">
+	<div class="progress-bar progress-bar-success" style="min-width:20px;width:60%">60%</div>
+</div>
+<!-- 条纹状，IE10+ -->
+<div class="progress">
+	<div class="progress-bar progress-bar-success progress-bar-striped" style="min-width:20px;width:60%">60%</div>
+</div>
+<!-- 动画效果，必须是条纹状 -->
+<div class="progress">
+	<div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width:20px;width:60%">60%</div>
+</div>
+<!-- 堆叠效果 -->
+<div class="progress">
+	<div class="progress-bar progress-bar-danger" style="min-width:20px;width:20%">20%</div>
+	<div class="progress-bar progress-bar-warning" style="min-width:20px;width:40%">40%</div>
+	<div class="progress-bar progress-bar-success" style="min-width:20px;width:40%">40%</div>
+</div>
+
+
+<!-- 媒体对象组件 -->
+<div class="media">
+	<div class="media-left media-middle">
+		<img src="img/github.jpg" alt="" class="media-object">
+	</div>
+	<div class="media-body">
+		<h4 class="media-heading">内容标题</h4>
+		<p>接受的字符：数字，数字分隔符（小数点或逗号），负号（-），空格，“E”或者“e”（科学计数法标记）。注意：使用科学计数法时，必须使用点号作为小数点标记。</p>
+	</div>
+</div>
+
+<div class="media">
+	<div class="media-body">
+		<h4 class="media-heading">内容标题</h4>
+		<p>接受的字符：数字，数字分隔符（小数点或逗号），负号（-），空格，“E”或者“e”（科学计数法标记）。注意：使用科学计数法时，必须使用点号作为小数点标记。</p>
+	</div>
+	<div class="media-right">
+		<img src="img/github.jpg" alt="" class="media-object">
+	</div>
+</div>
+
+<!-- 媒体对象列表 -->
+<ul class="madia-list">
+	<li class="media">
+		<div class="media-left">
+			<img src="img/github.jpg" alt="" class="media-object">
+		</div>
+		<div class="media-body">
+			<h4 class="media-heading">内容标题</h4>
+			<p>接受的字符：数字，数字分隔符（小数点或逗号），负号（-），空格，“E”或者“e”（科学计数法标记）。注意：使用科学计数法时，必须使用点号作为小数点标记。接受的字符：数字，数字分隔符（小数点或逗号），负号（-），空格，“E”或者“e”（科学计数法标记）。注意：使用科学计数法时，必须使用点号作为小数点标记。接受的字符：数字，数字分隔符（小数点或逗号），负号（-），空格，“E”或者“e”（科学计数法标记）。注意：使用科学计数法时，必须使用点号作为小数点标记。接受的字符：数字，数字分隔符（小数点或逗号），负号（-），空格，“E”或者“e”（科学计数法标记）。注意：使用科学计数法时，必须使用点号作为小数点标记。接受的字符：数字，数字分隔符（小数点或逗号），负号（-），空格，“E”或者“e”（科学计数法标记）。注意：使用科学计数法时，必须使用点号作为小数点标记。</p>
+			<div class="media">
+				<div class="media-left media-middle">
+					<img src="img/github.jpg" alt="" class="media-object">
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">内容标题</h4>
+					<p>接受的字符：数字，数字分隔符（小数点或逗号），负号（-），空格，“E”或者“e”（科学计数法标记）。注意：使用科学计数法时，必须使用点号作为小数点标记。</p>
+				</div>
+			</div>
+		</div>
+	</li>
+</ul>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1,maximum-scale=1, user-scalable=no"><!-- 这句话会让移动端访问看起来清楚 -->
+	<title>Bootstrap-实例-响应式轮播图</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style type="text/css">
+		#myCarousel{
+			margin: 50px 0 0 0;
+		}
+		.carousel-inner img{
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="#" class="navbar-brand" style="padding:10px;"><img src="img/logo.png" alt="品牌LOGO" style="margin:0px;padding:0px;width:30px;height:30px"></a>
+			<button class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-list"></span> 资讯</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-fire"></span> 案例</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- 响应式轮播图 -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="img/bg1.jpg" alt="第一张">
+		</div>
+		<div class="item">
+			<img src="img/bg2.jpg" alt="第二张">
+		</div>
+		<div class="item">
+			<img src="img/bg3.jpg" alt="第三张">
+		</div>
+	</div>
+	<a href="#myCarousel" data-slide="prev" class="carousel-control left">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a href="#myCarousel" data-slide="next" class="carousel-control right">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+	// //设置垂直居中
+	// $(window).resize(function(){
+	// 	var height=$('.carousel-inner img').eq(0).height()||$('.carousel-inner img').eq(1).height()||$('.carousel-inner img').eq(2).height();
+	// 	$('.carousel-control').css('line-height',height+'px');
+	// });
+</script>
+</body>
+</html>
