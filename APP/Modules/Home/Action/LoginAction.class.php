@@ -57,6 +57,7 @@ class LoginAction extends Action
 			// 	$this->redirect('Admin/Index/index');
 			// else
  		// 		$this->redirect(GROUP_NAME."/Index/index");
+ 			Log::write($result['username'].'登陆', Log::INFO);
  			$this->redirect(GROUP_NAME.'/Index/index');
 		}
 		else
@@ -71,6 +72,8 @@ class LoginAction extends Action
 	 */
 	public function logout()
 	{
+		$username=session('username');
+ 		Log::write($username.'登出', Log::INFO);
 		session(null);
  		session('[destroy]');
  		$this->redirect(GROUP_NAME.'/Login/index');

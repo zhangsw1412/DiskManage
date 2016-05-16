@@ -40,6 +40,9 @@ return array(
 		
 		),
 
+	//开启日志
+	'LOG_RECORD' => true,
+
 	//数据库配置
 	'DB_HOST'=>'127.0.0.1',
 	'DB_TYPE'=>'mysql',
