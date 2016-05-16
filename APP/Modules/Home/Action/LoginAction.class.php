@@ -57,7 +57,7 @@ class LoginAction extends Action
 			// 	$this->redirect('Admin/Index/index');
 			// else
  		// 		$this->redirect(GROUP_NAME."/Index/index");
- 			Log::write($result['username'].'登陆', Log::INFO);
+ 			Log::write($result['username'].'从'.get_client_ip().'登陆', Log::INFO);
  			$this->redirect(GROUP_NAME.'/Index/index');
 		}
 		else

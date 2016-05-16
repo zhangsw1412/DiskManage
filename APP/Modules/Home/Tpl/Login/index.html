@@ -17,12 +17,12 @@
   <form method="post" action="{:U(GROUP_NAME.'/Login/login')}" class="login">
     <p>
       <label for="login">Username:</label>
-      <input type="text" name="username" id="login" value="" onkeydown="if(event.keyCode==13){this.submit();}">
+      <input type="text" name="username" id="login" placeholder="请输入用户名" onkeydown="if(event.keyCode==13){this.submit();}">
     </p>
 
     <p>
       <label for="password">Password:</label>
-      <input type="password" name="password" id="password" value="" onkeydown="if(event.keyCode==13){this.submit();}">
+      <input type="password" name="password" id="password" placeholder="请输入密码" onkeydown="if(event.keyCode==13){this.submit();}">
     </p>
 
     <p class="login-submit">
