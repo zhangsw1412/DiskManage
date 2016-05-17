@@ -15,8 +15,12 @@ return array(
 	// 'HTML_CACHE_ON'=>true,
 
 	//开启模板
-	'LAYOUT_ON'=>true,
-    'LAYOUT_NAME'=>'../Tpl/Public/layout',
+	// 'LAYOUT_ON'=>true,
+    // 'LAYOUT_NAME'=>'../Tpl/Layout/layout',
+
+    //错误页和成功页的跳转模板
+    // 'TMPL_ACTION_ERROR' => '../Tpl/Layout/dispatch_jump',
+    // 'TMPL_ACTION_SUCCESS' => '../Tpl/Layout/dispatch_jump',
 
 	//指定超级管理员名称
 	// 'RBAC_SUPERADMIN'=>'admin',

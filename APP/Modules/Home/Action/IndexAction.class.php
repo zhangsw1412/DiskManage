@@ -11,6 +11,7 @@ Class IndexAction extends CommonAction
 	 */
 	public function index()
 	{
+		layout("Layout/layout");
 		$this->display();
 	}
 
