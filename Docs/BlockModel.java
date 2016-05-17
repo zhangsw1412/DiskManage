@@ -11,22 +11,22 @@ import java.io.Serializable;
 @Entity
 public class BlockModel implements Serializable {
     @Id
-    private String fileId_offset;
-    private long blockOffset;
-    private int realSize;
-    private String crc32_value;
-    private long fileId;
+    private String fileId_offset;//文件id和偏移量的拼接，是两个long类型拼一块儿
+    private long blockOffset;//块偏移
+    private int realSize;//实际大小
+    private String crc32_value;//crc校验码
+    private long fileId;//就是fileid,文件编号
     @Column(unique = true)
-    private String blockPath;
-    private String cdPath;
-    private int block_replication;
-    private int rackId;
+    private String blockPath;//在硬盘上的绝对路径
+    private String cdPath;//在盘片上的路径
+    private int block_replication;//有多少个块的副本
+    private int rackId;//
     private int rowNum;
     private int layerNum;
     private int columnNum;
     private int cdNum;
-    private boolean isEOF;
-    private boolean isBurnSuccess;
+    private boolean isEOF;//标记文件结束
+    private boolean isBurnSuccess;//标记是否刻录成功
 
     public BlockModel() {
 

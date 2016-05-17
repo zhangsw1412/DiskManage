@@ -16,18 +16,18 @@ public class FileModel implements Serializable {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    private long fileId;
-    private byte[] fileName;
+    private long fileId;//自增主键
+    private byte[] fileName;//文件名，字符串，是不带路径的纯文件名
     @Column(unique = true, nullable = false)
-    private String filePath;
-    private boolean is_dir;
-    private long blockSize;
-    private long modificationTime;
-    private long accessTime;
-    private String fileOwner;
-    private String fileGroup;
-    private long md5Value;
-    private int children_num;
+    private String filePath;//绝对路径
+    private boolean is_dir;//标识是否为目录
+    private long blockSize;//文件块大小
+    private long modificationTime;//上次修改的时间
+    private long accessTime;//上次访问的时间
+    private String fileOwner;//用户
+    private String fileGroup;//用户组
+    private long md5Value;//文件md5
+    private int children_num;//如果是目录，它表示下一级有多少个子节点
 
     public FileModel() {
 

@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 /**
  * Created by root on 4/11/16.
+ * rack就是一个大笼子
  */
 @Entity
 public class RackModel implements Serializable {
@@ -16,12 +17,12 @@ public class RackModel implements Serializable {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     private int id;
-    private int box_cds;
-    private int layers;
-    private int rows;
-    private int columns;
-    private int eachBlockSize; //m.
-    private long eacheCdSize; //M
+    private int box_cds;//这个是最小单位，小匣子里的盘片数量
+    private int layers;//大的层数
+    private int rows;//小的层数
+    private int columns;//列数
+    private int eachBlockSize; //m.每个文件块的大小 64M
+    private long eachCdSize; //M.每个盘片的容量300*1024M
 
     public RackModel(int box_cds, int layers, int rows, int columns, int eachBlockSize, long eacheCdSize) {
         this.box_cds = box_cds;

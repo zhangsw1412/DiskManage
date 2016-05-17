@@ -8,15 +8,15 @@ import java.io.Serializable;
  */
 @Entity
 public class InitModel implements Serializable {
-    private int write_channel_timeout; //s
-    private long readCacheSize; //M
-    private int NFS_read_size; //M
-    private int NFS_write_size; //M
-    private String readCachePre; //home/yjl/cfs/db5
-    private String writeCachePre;
-    private String isoPre;
-    private String linkPre;
-    private String dirPre;
+    private int write_channel_timeout; //s在这个规定时间里，如果一直没有数据传送，则认定文件传输完成
+    private long readCacheSize; //G读缓存
+    private int NFS_read_size; //k最大是1024，NFS读尺寸
+    private int NFS_write_size; //k最大是1024，NFS写尺寸
+    private String readCachePre; //home/yjl/cfs/db5读缓存目录
+    private String writeCachePre;//写缓存目录
+    private String isoPre;//打包目录
+    private String linkPre;//链接分块
+    private String dirPre;//假目录
 
 
     public InitModel(int write_channel_timeout, long readCacheSize, int NFS_read_size, int NFS_write_size, String readCachePre, String writeCachePre, String isoPre, String linkPre, String dirPre) {

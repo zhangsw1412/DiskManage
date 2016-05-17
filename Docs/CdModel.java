@@ -9,19 +9,20 @@ import java.io.Serializable;
 
 /**
  * Created by root on 3/21/16.
+ * 对应一个盘片
  */
 @Entity
 public class CdModel implements Serializable {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    private long id;
-    private int rackId;
-    private int cdNum;
-    private int layerNum;
-    private int rowNum;
-    private int columnNum;
-    private boolean isBurnSuccess;
+    private long id;//自增id主键
+    private int rackId;//标示是第几个rack，大柜子
+    private int cdNum;//盘片编号
+    private int layerNum;//大层号
+    private int rowNum;//小层号
+    private int columnNum;//柱号
+    private boolean isBurnSuccess;//是否刻录成功
 
     public CdModel() {
     }
