@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index_index.css">
 <script type="text/javascript" src="__PUBLIC__/js/index_index.js"></script>
 <nav class="navbar navbar-inverse navbar-fixed-top"><!-- 这个fixed-top还可以设置成底部或者静态导航 -->
 	<div class="container">
@@ -27,18 +28,32 @@
 	</div>
 </nav>
 <div style="margin:50px 0 0 0">
-	<div class="row" style="margin: 0px;padding: 0px">
-		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0px;margin: 0px">
-			<dl class=dl-vertical>
-			<dt>Bootstrap</dt>
-			<dd>提供设计好的样式供开发者使用</dd>
-			<dd style="overflow-x:hidden;overflow-y:auto">提供设计好的样式供开发者使用</dd>
-			<dd>提供设计好的样式供开发者使用</dd>
-			<dd>提供设计好的样式供开发者使用</dd>
-		</dl>
+	<div class="row">
+		<div id="left" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+			<dl class="dl-vertical">
+				<dt>系统配置</dt>
+				<dd><a href="{:U(GROUP_NAME.'/Index/test')}" target="rightframe">初始化参数</a></dd>
+				<dd><a href="">机架参数</a></dd>
+				<dd><a href="">提供设计好的样式供开发者</a></dd>
+				<dd><a href="">提供设计好的样式供开发者</a></dd>
+			</dl>
+			<dl class="dl-vertical">
+				<dt>系统配置</dt>
+				<dd><a href="http://www.baidu.com" target="rightframe">初始化参数</a></dd>
+				<dd><a href="">机架参数</a></dd>
+				<dd><a href="">提供设计好的样式供开发者</a></dd>
+				<dd><a href="">提供设计好的样式供开发者</a></dd>
+			</dl>
+			<dl class="dl-vertical">
+				<dt>系统配置</dt>
+				<dd><a href="http://www.baidu.com" target="rightframe">初始化参数</a></dd>
+				<dd><a href="">机架参数</a></dd>
+				<dd><a href="">提供设计好的样式供开发者</a></dd>
+				<dd><a href="">提供设计好的样式供开发者</a></dd>
+			</dl>
 		</div>
-		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="float:left;overflow: hidden;padding: 0px;margin: 0px">
-			<iframe id="iframepage" style="border-left: solid 1px #dcdcdc;padding: 0px;margin: 0px" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" width="100%" height="100%" src="http://www.163.com">
+		<div id="right" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+			<iframe id="rightframe" name="rightframe" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" width="100%" height="100%" src="http://www.163.com">
 				
 			</iframe>
 		</div>

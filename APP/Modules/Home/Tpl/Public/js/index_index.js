@@ -7,5 +7,5 @@ $(function(){
 
 function resize_window(){
 	// $("#left").height($(window).height()-102);
-	$("#iframepage").height($(window).height()-120);//正常是减掉191
+	$("#rightframe").height($(window).height()-120);//正常是减掉191
 }
