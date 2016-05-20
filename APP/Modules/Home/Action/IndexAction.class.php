@@ -11,6 +11,13 @@ Class IndexAction extends CommonAction
 	 */
 	public function index()
 	{
+		layout("Layout/layout");
+		$this->display();
+	}
+
+	public function test()
+	{
+		layout("Layout/standard");
 		$this->display();
 	}
 }
