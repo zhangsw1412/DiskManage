@@ -1,0 +1,24 @@
+<span class="h1">状态信息</span>
+<br>
+<br>
+<br>
+<dl class="dl-horizontal">
+	<dt>用户名：</dt>
+	<dd>{$username}</dd>
+	<br>
+	<dt>上次登录时间：</dt>
+	<dd>{$login_time|date="Y-m-d H:i:s",###}</dd>
+	<br>
+	<dt>上次登录IP：</dt>
+	<dd>{$login_ip}</dd>
+	<br>
+	<dt>用户状态：</dt>
+	<dd>
+	<if condition="$valid eq 1">
+		正常
+	<else/>
+		已停用
+	</if>
+	</dd>
+	<br>
+</dl>
