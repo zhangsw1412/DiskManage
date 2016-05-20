@@ -1,0 +1,51 @@
+<span class="h1">机架参数配置</span>
+<br><br><br>
+<form action="{:U(GROUP_NAME.'/SystemConfig/writeRackParams')}" method="post" class="form-horizontal">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">每盒盘片数:</label>
+		<div class="col-sm-4">
+			<input type="number" class="form-control" name="box_cds" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">每大层所含层数:</label>
+		<div class="col-sm-4">
+			<input type="number" class="form-control" name="rows" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">机架层数:</label>
+		<div class="col-sm-4">
+			<input type="number" class="form-control" name="layers" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">机架列数:</label>
+		<div class="col-sm-4">
+			<input type="number" class="form-control" name="columns" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">文件块大小:</label>
+		<div class="col-sm-4">
+			<div class="input-group">
+				<input type="number" class="form-control" name="eachBlockSize" >
+				<div class="input-group-addon">M</div>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">每盘片容量:</label>
+		<div class="col-sm-4">
+			<div class="input-group">
+				<input type="number" class="form-control" name="eachCdSize" >
+				<div class="input-group-addon">M</div>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-1 col-sm-offset-6">
+			<input type="submit" class="btn btn-info" value="确认">
+		</div>
+	</div>
+</form>
