@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/pagination.css">
+<table class="table table-hover">
+	<caption></caption>
+	<thead>
+		<tr>
+			<th class="text-center" style="vertical-align: middle;">机架号</th>
+			<th class="text-center" style="vertical-align: middle;">层号</th>
+			<th class="text-center" style="vertical-align: middle;">柱号</th>
+			<th class="text-center" style="vertical-align: middle;">小层号</th>
+			<th class="text-center" style="vertical-align: middle;">盘片号</th>
+			<th class="text-center" style="vertical-align: middle;">刻录状态</th>
+			<th class="text-center" style="vertical-align: middle;">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='cds' item='cd'>
+			<tr <if condition='$cd["isBurnSuccess"] eq 0'>class="danger"</if>>
+				<td class="text-center" style="vertical-align: middle;">{$cd.rackId}</td>
+				<td class="text-center" style="vertical-align: middle;">{$cd.layerNum}</td>
+				<td class="text-center" style="vertical-align: middle;">{$cd.columnNum}</td>
+				<td class="text-center" style="vertical-align: middle;">{$cd.rowNum}</td>
+				<td class="text-center" style="vertical-align: middle;">{$cd.cdNum}</td>
+				<td class="text-center" style="vertical-align: middle;"><if condition='$cd["isBurnSuccess"]'>成功<else/>失败</if></td>
+				<td class="text-center" style="vertical-align: middle;"><a href="" <if condition='$cd["isBurnSuccess"] eq 0'>class="btn btn-link disabled"<else/>class="btn btn-link"</if>>详细信息</a></td>
+			</tr>
+		</foreach>
+	</tbody>
+</table>
+<div align="center">
+	<div class="pagination">{$page}</div>
+</div>
