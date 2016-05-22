@@ -1,4 +1,9 @@
+<script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-10/esl.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/diskControl_diskStatus.js"></script>
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/pagination.css">
+<button id="showPie" class="btn btn-info">显示统计图</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button id="hidePie" class="btn btn-danger">隐藏统计图</button>
+<div id="picturePlace" style="height:400px;" hidden></div>
 <table class="table table-hover">
 	<caption></caption>
 	<thead>
@@ -29,3 +34,24 @@
 <div align="center">
 	<div class="pagination">{$page}</div>
 </div>
+<script type="text/javascript">
+	$('#showPie').click(function(){
+		$.ajax({
+			type:'post',
+			url:"{:U(GROUP_NAME.'/DiskControl/usageData')}",
+			dataType:'json',
+			success:function(data){
+				$('#picturePlace').show();
+				showChart(data['succ'],data['fail'],data['unused']);
+			},
+			error:function(data){
+				console.log('请求数据失败');
+				console.log(data);
+			}
+		});
+	});
+
+	$('#hidePie').click(function(){
+		$('#picturePlace').hide();
+	});
+</script>

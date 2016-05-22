@@ -69,4 +69,22 @@
             layout('Layout/standard');
             $this->display();
         }
+
+        /**
+         * 请求饼图数据
+         * @return [type] [description]
+         */
+        public function usageData()
+        {
+            $box_cds=(int)C('box_cds');
+            $rows=(int)C('rows');
+            $layers=(int)C('layers');
+            $columns=(int)C('columns');
+            $total=$box_cds*$rows*$layers*$columns;
+            $used=M('cdmodel')->count();
+            $succ=(int)M('cdmodel')->where(array('isBurnSuccess'=>1))->count();
+            $fail=$used-$succ;
+            $unused=$total-$used;
+            $this->ajaxReturn(['succ'=>$succ,'fail'=>$fail,'unused'=>$unused],'json');
+        }
     }
