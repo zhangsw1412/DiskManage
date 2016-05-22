@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/pagination.css">
+<a href="javascript:history.go(-({$step}));" class="btn btn-info">返回</a>
+<div align="center">
+	<h3>机架号:{$rackId}&nbsp;&nbsp;层号:{$layerNum}&nbsp;&nbsp;柱号:{$columnNum}&nbsp;&nbsp;小层号:{$rowNum}&nbsp;&nbsp;盘片号:{$cdNum}</h3>
+</div>
+<table class="table table-striped">
+	<caption class="text-center"><h3><b>盘片详细信息</b></h3></caption>
+	<thead>
+		<tr>
+			<th class="text-center" style="vertical-align: middle;">文件号</th>
+			<th class="text-center" style="vertical-align: middle;">块偏移</th>
+			<th class="text-center" style="vertical-align: middle;">文件名</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='blocks' item='block'>
+			<tr>
+				<td class="text-center" style="vertical-align: middle;">{$block.fileId}</td>
+				<td class="text-center" style="vertical-align: middle;">{$block.blockOffset}</td>
+				<td class="text-center" style="vertical-align: middle;">{$block.fileName}</td>
+			</tr>
+		</foreach>
+	</tbody>
+</table>
+<div align="center">
+	<div class="pagination">{$page}</div>
+</div>
