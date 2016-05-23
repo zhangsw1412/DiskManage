@@ -1,1 +1,65 @@
-12321
+<a href="{:U(GROUP_NAME.'/FileManage/goBack',array('path'=>$path,'place'=>'no'))}" class="btn btn-primary"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;返回上级目录</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:void(0);" id="create_a" data-toggle="modal" data-target="#create" class="btn btn-success"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;创建文件夹</a>&nbsp;&nbsp;&nbsp;
+<div align="center">
+	<h3>当前路径:{$path|str_replace='-','/',###}</h3>
+</div>
+<table class="table table-hover">
+	<caption></caption>
+	<thead>
+		<tr>
+			<th class="text-center" style="vertical-align: middle;padding: 8px 4px">类型</th>
+			<th class="text-center" style="vertical-align: middle;padding: 8px 4px">名称</th>
+			<th class="text-center" style="vertical-align: middle;padding: 8px 4px">文件大小(字节)</th>
+			<th class="text-center" style="vertical-align: middle;padding: 8px 4px">最后改变时间</th>
+			<th class="text-center" style="vertical-align: middle;padding: 8px 4px">最后访问时间</th>
+			<th class="text-center" style="vertical-align: middle;padding: 8px 4px">最后修改时间</th>
+			<th class="text-center" style="vertical-align: middle;padding: 8px 4px">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='files' item='file'>
+			<tr>
+				<td class="text-center" style="vertical-align: middle;padding: 8px 4px"><span <if condition="$file['isDir']">class="glyphicon glyphicon-folder-close"<else/>class="glyphicon glyphicon-file"</if>></span></td>
+				<td class="text-center" style="vertical-align: middle;padding: 8px 4px"><if condition="$file['name']{0} eq '+'">{$file.name|substr_replace=###,".",0,1}<else/>{$file.name}</if></td>
+				<td class="text-center" style="vertical-align: middle;padding: 8px 4px">{$file.size}</td>
+				<td class="text-center" style="vertical-align: middle;padding: 8px 4px">{$file.ctime|date='Y-m-d H:i:s',###}</td>
+				<td class="text-center" style="vertical-align: middle;padding: 8px 4px">{$file.atime|date='Y-m-d H:i:s',###}</td>
+				<td class="text-center" style="vertical-align: middle;padding: 8px 4px">{$file.mtime|date='Y-m-d H:i:s',###}</td>
+				<td class="text-center" style="vertical-align: middle;padding: 8px 4px"><if condition="$file['isDir']"><a class="btn btn-xs btn-warning" href="{:U(GROUP_NAME.'/FileManage/enterDir',array('base'=>$path,'sub'=>$file['name']))}">进入&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a><else/><button class="btn btn-xs btn-info">下载&nbsp;<span class="glyphicon glyphicon-cloud-download"></span></button></if></td>
+			</tr>
+		</foreach>
+	</tbody>
+</table>
+
+<!-- 模态框声明 -->
+<div class="modal fade" id="create" tabindex="-1"><!-- fade是淡入淡出效果 -->
+	<!-- 窗口声明 -->
+	<div class="modal-dialog"><!-- 这里可以修改尺寸 -->
+		<!-- 内容声明 -->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal"><span>&times;</span></button>
+				<h4 class="modal-title">创建文件夹</h4>
+			</div>
+			<div class="modal-body"><!-- body里可以用流体栅格 -->
+				<div class="container-fluid">
+					<div class="row">
+						<form id="create_form" action="{:U(GROUP_NAME.'/FileManage/createDir')}" method="post" class="form-horizontal">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">文件夹名:</label>
+								<div class="col-sm-7">
+									<input type="text" name="folderName" class="form-control">
+									<input type="text" class="sr-only" name="path" value="{$path}">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+			<button class="btn btn-success" onclick="$('#create_form').submit();">创建</button>
+			<button class="btn btn-primary" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
