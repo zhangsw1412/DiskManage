@@ -1,0 +1,1 @@
+<?php	return array ( 'box_cds' => '3', 'rows' => '2', 'layers' => '3', 'columns' => '1', 'eachBlockSize' => '1', 'eachCdSize' => '1', );?>

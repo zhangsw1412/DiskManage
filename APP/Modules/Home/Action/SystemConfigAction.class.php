@@ -87,6 +87,7 @@ class SystemConfigAction extends Action
 				);
 			if($rackParams->save($data)===false)
 				$this->error('写入数据库失败');
+			F('sysparam',I('post.'),CONF_PATH);
 			$this->success('配置成功');
 		}
 		else
