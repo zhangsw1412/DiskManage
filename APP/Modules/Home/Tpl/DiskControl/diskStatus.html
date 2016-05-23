@@ -4,6 +4,31 @@
 <button id="showPie" class="btn btn-info">显示统计图</button>&nbsp;&nbsp;&nbsp;&nbsp;
 <button id="hidePie" class="btn btn-danger">隐藏统计图</button>
 <div id="picturePlace" style="height:400px;" hidden></div>
+<br><br>
+<form action="{:U(GROUP_NAME.'/DiskControl/diskStatus')}" method="post" class="form-inline">
+	<span class="badge">条件查询</span>
+	<div class="form-group">
+		<label>机架号:</label>
+		<input type="text" name="rackId" class="form-control" size="6">
+	</div>&nbsp;&nbsp;
+	<div class="form-group">
+		<label>层号:</label>
+		<input type="text" name="layerNum" class="form-control" size="6">
+	</div>&nbsp;&nbsp;
+	<div class="form-group">
+		<label>柱号:</label>
+		<input type="text" name="columnNum" class="form-control" size="6">
+	</div>&nbsp;&nbsp;
+	<div class="form-group">
+		<label>小层号:</label>
+		<input type="text" name="rowNum" class="form-control" size="6">
+	</div>&nbsp;&nbsp;
+	<div class="form-group">
+		<label>盘片号:</label>
+		<input type="text" name="cdNum" class="form-control" size="6">
+	</div>&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="submit" class="btn btn-success" value="查询">
+</form>
 <table class="table table-hover">
 	<caption></caption>
 	<thead>

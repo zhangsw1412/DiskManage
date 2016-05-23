@@ -17,11 +17,18 @@
          */
         public function diskStatus()
         {
+            $where=array();
+            if(I('post.rackId')!=='') $where['rackId']=(int)I('post.rackId');
+            if(I('post.layerNum')!=='') $where['layerNum']=(int)I('post.layerNum');
+            if(I('post.columnNum')!=='') $where['columnNum']=(int)I('post.columnNum');
+            if(I('post.rowNum')!=='') $where['rowNum']=(int)I('post.rowNum');
+            if(I('post.cdNum')!=='') $where['cdNum']=(int)I('post.cdNum');
+
             import('Class.Page',APP_PATH);
-            $count=M('cdmodel')->count();
+            $count=M('cdmodel')->where($where)->count();
             $page=new Page($count,15);
             $limit=$page->firstRow.','.$page->listRows;
-            $cds=M('cdmodel')->field('id',true)->limit($limit)->order('rackId,layerNum,columnNum,rowNum,cdNum')->select();
+            $cds=M('cdmodel')->where($where)->field('id',true)->limit($limit)->order('rackId,layerNum,columnNum,rowNum,cdNum')->select();
             if($cds===false) $this->error('数据库查询失败');
             $this->cds=$cds;
             $this->page=$page->show();
