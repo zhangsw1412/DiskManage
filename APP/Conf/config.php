@@ -10,12 +10,12 @@ return array(
 	//开启独立分组
 	'APP_GROUP_MODE'=>1,
 
-	'APP_GROUP_PATH'=>'Modules',
+	// 'APP_GROUP_PATH'=>'Modules',
 
 	'URL_HTML_SUFFIX'=>'',
 
 	//加载扩展的配置文件
-	'LOAD_EXT_CONFIG'=>'verify,water',
+	'LOAD_EXT_CONFIG'=>'sysparam',
 
 	//设置默认过滤函数，在获取表单数据时会进行特殊字符过滤
 	'DEFAULT_FILTER'=>'htmlspecialchars',
@@ -27,7 +27,7 @@ return array(
 	//'TMPL_FILE_DEPR'=>'_',
 
 	//显示页面调试工具
-	'SHOW_PAGE_TRACE'=>true,
+	'SHOW_PAGE_TRACE'=>false,
 
 	//路由模式
 	'URL_MODEL'=>2,
@@ -50,6 +50,6 @@ return array(
 	'DB_USER'=>'root',//换成本地的数据库用户和密码
 	'DB_PWD'=>'592307@zsw',
 	'DB_PORT'=>3306,
-	'DB_PREFIX'=>'tb_',
+	'DB_PREFIX'=>'tb_'
 );
 ?>

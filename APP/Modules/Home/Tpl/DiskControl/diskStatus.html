@@ -1,0 +1,82 @@
+<script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-10/esl.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/diskControl_diskStatus.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/pagination.css">
+<button id="showPie" class="btn btn-info">显示统计图&nbsp;<span class="glyphicon glyphicon-eye-open"></span></button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button id="hidePie" class="btn btn-danger">隐藏统计图&nbsp;<span class="glyphicon glyphicon-eye-close"></span></button>
+<div id="picturePlace" style="height:400px;" hidden></div>
+<br><br>
+<form action="{:U(GROUP_NAME.'/DiskControl/diskStatus')}" method="post" class="form-inline">
+	<span class="badge"><span class="glyphicon glyphicon-filter"></span>&nbsp;条件查询</span>
+	<div class="form-group">
+		<label>机架号:</label>
+		<input type="text" name="rackId" class="form-control" size="6">
+	</div>&nbsp;&nbsp;
+	<div class="form-group">
+		<label>层号:</label>
+		<input type="text" name="layerNum" class="form-control" size="6">
+	</div>&nbsp;&nbsp;
+	<div class="form-group">
+		<label>柱号:</label>
+		<input type="text" name="columnNum" class="form-control" size="6">
+	</div>&nbsp;&nbsp;
+	<div class="form-group">
+		<label>小层号:</label>
+		<input type="text" name="rowNum" class="form-control" size="6">
+	</div>&nbsp;&nbsp;
+	<div class="form-group">
+		<label>盘片号:</label>
+		<input type="text" name="cdNum" class="form-control" size="6">
+	</div>&nbsp;&nbsp;&nbsp;&nbsp;
+	<button class="btn btn-success" onclick="this.submit();"><span class="glyphicon glyphicon-search"></span>&nbsp;查询</button>
+</form>
+<table class="table table-hover">
+	<caption></caption>
+	<thead>
+		<tr>
+			<th class="text-center" style="vertical-align: middle;">机架号</th>
+			<th class="text-center" style="vertical-align: middle;">层号</th>
+			<th class="text-center" style="vertical-align: middle;">柱号</th>
+			<th class="text-center" style="vertical-align: middle;">小层号</th>
+			<th class="text-center" style="vertical-align: middle;">盘片号</th>
+			<th class="text-center" style="vertical-align: middle;">刻录状态</th>
+			<th class="text-center" style="vertical-align: middle;">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='cds' item='cd'>
+			<tr <if condition='$cd["isBurnSuccess"] eq 0'>class="danger"</if>>
+				<td class="text-center" style="vertical-align: middle;">{$cd.rackId}</td>
+				<td class="text-center" style="vertical-align: middle;">{$cd.layerNum}</td>
+				<td class="text-center" style="vertical-align: middle;">{$cd.columnNum}</td>
+				<td class="text-center" style="vertical-align: middle;">{$cd.rowNum}</td>
+				<td class="text-center" style="vertical-align: middle;">{$cd.cdNum}</td>
+				<td class="text-center" style="vertical-align: middle;"><if condition='$cd["isBurnSuccess"]'>成功<else/>失败</if></td>
+				<td class="text-center" style="vertical-align: middle;"><a <if condition='$cd["isBurnSuccess"] eq 0'>href="" class="btn btn-link disabled"<else/>href="{:U(GROUP_NAME.'/DiskControl/diskDetail',array('rackId'=>$cd['rackId'],'layerNum'=>$cd['layerNum'],'columnNum'=>$cd['columnNum'],'rowNum'=>$cd['rowNum'],'cdNum'=>$cd['cdNum']))}" class="btn btn-link"</if>>详细信息</a></td>
+			</tr>
+		</foreach>
+	</tbody>
+</table>
+<div align="center">
+	<div class="pagination">{$page}</div>
+</div>
+<script type="text/javascript">
+	$('#showPie').click(function(){
+		$.ajax({
+			type:'post',
+			url:"{:U(GROUP_NAME.'/DiskControl/usageData')}",
+			dataType:'json',
+			success:function(data){
+				$('#picturePlace').show();
+				showChart(data['succ'],data['fail'],data['unused']);
+			},
+			error:function(data){
+				console.log('请求数据失败');
+				console.log(data);
+			}
+		});
+	});
+
+	$('#hidePie').click(function(){
+		$('#picturePlace').hide();
+	});
+</script>

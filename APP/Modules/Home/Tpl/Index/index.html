@@ -3,7 +3,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top"><!-- 这个fixed-top还可以设置成底部或者静态导航 -->
 	<div class="container">
 		<div class="navbar-header">
-			<a href="javascript:void(0);" class="navbar-brand navbar-left" style="color:white">光盘阵列管理系统</a>
+			<a href="javascript:void(0);" class="navbar-brand navbar-left" style="color:white">光盘阵列管理系统&nbsp;<span class="glyphicon glyphicon-cloud"></span></a>
 		</div>
 		<!-- <ul class="nav navbar-nav">
 			<li class="active"><a href="#">首页</a></li>
@@ -31,22 +31,21 @@
 	<div class="row">
 		<div id="left" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 			<dl class="dl-vertical">
-				<dt>系统配置</dt>
+				<dt>系统配置&nbsp;<span class="glyphicon glyphicon-cog"></span></dt>
 				<dd><a href="{:U(GROUP_NAME.'/SystemConfig/initParams')}" target="rightframe">初始化参数</a></dd>
 				<dd><a href="{:U(GROUP_NAME.'/SystemConfig/rackParams')}" target="rightframe">机架参数</a></dd>
 			</dl>
 			<dl class="dl-vertical">
-				<dt>设备监控</dt>
-				<dd><a href="http://www.baidu.com" target="rightframe">光盘库控制</a></dd>
-				<dd><a href="">光盘库状态显示</a></dd>
-				<dd><a href="">系统日志</a></dd>
+				<dt>设备监控&nbsp;<span class="glyphicon glyphicon-hdd"></span></dt>
+				<dd><a href="{:U(GROUP_NAME.'/DiskControl/diskStatus')}" target="rightframe">光盘库状态显示</a></dd>
 			</dl>
 			<dl class="dl-vertical">
-				<dt>文件管理</dt>
-				<dd><a href="http://www.baidu.com" target="rightframe">浏览目录</a></dd>
-				<dd><a href="">创建目录</a></dd>
-				<dd><a href="">上传文件</a></dd>
-				<dd><a href="">下载文件</a></dd>
+				<dt>文件管理&nbsp;<span class="glyphicon glyphicon-folder-open"></span></dt>
+				<dd><a href="{:U(GROUP_NAME.'/FileManage/browseDir')}" target="rightframe">浏览目录</a></dd>
+			</dl>
+			<dl class="dl-vertical">
+				<dt>用户管理&nbsp;<span class="glyphicon glyphicon-user"></span></dt>
+				<dd><a href="{:U(GROUP_NAME.'/UserManage/info')}" target="rightframe">状态信息</a></dd>
 			</dl>
 		</div>
 		<div id="right" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
