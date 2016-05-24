@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1,maximum-scale=1, user-scalable=no"><!-- 这句话会让移动端访问看起来清楚 -->
+	<title>Bootstrap-实例-资讯</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style type="text/css">
+		body{
+			font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei UI","Microsoft Yahei",SimHei,"\5B8B\4F53",simsun,sans-serif;
+			color: #666;
+		}
+		.jumbotron{
+			background-image: url(./img/bg.jpg);
+			margin: 50px 0 0 0;
+			color:#ccc;
+		}
+		.jumbotron h1{
+			font-size: 26px;
+			padding: 0 0 0 20px;
+		}
+		.jumbotron h4{
+			font-size: 15px;
+			padding: 0 0 0 20px;
+		}
+		#information{
+			background-color: #eee;
+			padding: 40px 0;
+		}
+		/*没有小于768px，是因为Bootstrap3以移动端优先设计*/
+
+		/* 小屏幕（平板，大于等于768px） */
+		@media (min-width: 768px) {
+			.tab-h2 {
+				font-size: 26px;
+			}
+			.tab-p {
+				font-size: 16px;
+			}
+			.text h3 {
+				font-size: 22px;
+			}
+			.text p {
+				font-size: 15px;
+			}
+			.tab2-text {
+				float: left;
+			}
+			.tab2-img {
+				float: right;
+			}
+			.jumbotron h1 {
+				font-size: 30px;
+			}
+			.jumbotron h4 {
+				font-size: 16px;
+			}
+			.info-content h4 {
+				font-size: 16px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		}
+
+		/* 中等屏幕（桌面显示器，大于等于992px） */
+		@media (min-width: 992px) {
+			.tab-h2 {
+				font-size: 28px;
+			}
+			.tab-p {
+				font-size: 17px;
+			}
+			.text h3 {
+				font-size: 24px;
+			}
+			.text p {
+				font-size: 16px;
+			}
+			.jumbotron h1 {
+				font-size: 33px;
+			}
+			.jumbotron h4 {
+				font-size: 17px;
+			}
+			.info-content h4 {
+				font-size: 18px;
+			}
+		}
+
+		/* 大屏幕（大桌面显示器，大于等于1200px） */
+		@media (min-width: 1200px) {
+			.tab-h2 {
+				font-size: 30px;
+			}
+			.tab-p {
+				font-size: 18px;
+			}
+			.text h3 {
+				font-size: 26px;
+			}
+			.text p {
+				font-size: 18px;
+			}
+			.jumbotron h1 {
+				font-size: 36px;
+			}
+			.jumbotron h4 {
+				font-size: 18px;
+			}
+			.info-content h4 {
+				font-size: 20px;
+			}
+		}
+		.info-content{
+			background-color: #fff;
+			margin: 0 0 20px 0;
+			box-shadow: 2px 2px 3px #ccc;
+		}
+		.info-content img{
+			margin: 15px 0;
+		}
+		.info-content h4{
+			color: #333;
+			padding: 2px 0 0 0;
+			font-size: 14px;
+		}
+		.info-content p{
+			line-height: 1.6;
+		}
+		.info-right{
+			background-color: #fff;
+			box-shadow: 2px 2px 3px #ccc;
+		}
+		.info-right blockquote{
+			margin: 0;
+			padding: 0;
+		}
+		.info-right h2{
+			font-size: 20px;
+			color: #333;
+			padding: 5px;
+		}
+		.info-right h4{
+			color: #333;
+			font-size: 16px;
+			padding: 2px 0 0 0;
+			line-height: 1.6;
+		}
+
+		#footer{
+			background-color: #666;
+			border-top: 1px solid #ccc;
+			padding: 20px;
+			text-align: center;
+			color: #eee;
+		}
+	</style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="25.html" class="navbar-brand" style="padding:10px;"><img src="img/logo.png" alt="品牌LOGO" style="margin:0px;padding:0px;width:30px;height:30px"></a>
+			<button class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="25.html"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+				<li class="active"><a href="information.html"><span class="glyphicon glyphicon-list"></span> 资讯</a></li>
+				<li><a href="case.html"><span class="glyphicon glyphicon-fire"></span> 案例</a></li>
+				<li><a href="about.html"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="jumbotron">
+	<div class="container">
+		<hgroup>
+			<h1>资讯</h1>
+			<h4>啥啥啥...</h4>
+		</hgroup>
+	</div>
+</div>
+
+<div id="information">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="container-fluid" style="padding:0;">
+					<div class="row info-content">
+						<div class="col-md-5 col-sm-5 col-xs-5">
+							<img src="img/info1.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7 col-sm-7 col-xs-7">
+							<h4>又是标题</h4>
+							<p class="hidden-xs">这里是内容</p>
+							<p>时间</p>
+						</div>
+					</div>
+					<div class="row info-content">
+						<div class="col-md-5 col-sm-5 col-xs-5">
+							<img src="img/info2.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7 col-sm-7 col-xs-7">
+							<h4>又是标题</h4>
+							<p class="hidden-xs">这里是内容</p>
+							<p>时间</p>
+						</div>
+					</div>
+					<div class="row info-content">
+						<div class="col-md-5 col-sm-5 col-xs-5">
+							<img src="img/info3.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7 col-sm-7 col-xs-7">
+							<h4>又是标题又是标题又是标题又是标题又是标题又是标题又是标题又是标题又是标题</h4>
+							<p class="hidden-xs">这里是内容</p>
+							<p>时间</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 info-right hidden-sm hidden-xs">
+				<blockquote>
+					<h2>热门资讯</h2>
+				</blockquote>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-5 col-sm-5 col-xs-5" style="margin:12px 0;padding:0;">
+							<img src="img/info2.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7 col-sm-7 col-xs-7" style="padding-right:0;">
+							<h4>又是标题</h4>
+							<p>时间</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5 col-sm-5 col-xs-5" style="margin:12px 0;padding:0;">
+							<img src="img/info1.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7 col-sm-7 col-xs-7" style="padding-right:0;">
+							<h4>又是标题</h4>
+							<p>时间</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5 col-sm-5 col-xs-5" style="margin:12px 0;padding:0;">
+							<img src="img/info3.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7 col-sm-7 col-xs-7" style="padding-right:0;">
+							<h4>又是标题</h4>
+							<p>时间</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- 网页底部 -->
+<footer id="footer">
+	<div class="container">
+		<p>合作单位 | 联系我们 | 版权投诉</p>
+		<p>京ICP备1234567. &copy; 2016 zhangsw. Powered by Bootstrap.</p>
+	</div>
+</footer>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

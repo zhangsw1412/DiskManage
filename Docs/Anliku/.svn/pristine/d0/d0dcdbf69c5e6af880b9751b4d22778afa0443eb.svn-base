@@ -1,0 +1,63 @@
+<div class="col-md-6">
+	<div class="list-group">
+	   <a href="#" class="list-group-item active">
+		  <h4 class="list-group-item-heading">
+				优秀案例
+		  </h4>
+	   </a>
+		<foreach name="goodAnli" item="anli">
+			<a href={:U(GROUP_NAME."/Anli/info?anliid=".$anli['id'])} class="list-group-item">
+				<h4 class="list-group-item-heading">
+					{$anli.title}
+				</h4>
+				<p class="list-group-item-text">
+					{$anli.key_words}
+				</p>
+			</a>
+		</foreach>
+	</div>
+</div>
+<div class="col-md-6">
+	<div class="list-group">
+	   <a href="#" class="list-group-item active">
+		  <h4 class="list-group-item-heading">
+				最新案例
+		  </h4>
+	   </a>
+		<foreach name="goodAnli" item="anli">
+			<a href={:U(GROUP_NAME."/Anli/info?anliid=".$anli['id'])} class="list-group-item">
+				<h4 class="list-group-item-heading">
+					{$anli.title}
+				</h4>
+				<p class="list-group-item-text">
+					{$anli.key_words}
+				</p>
+			</a>
+		</foreach>
+	</div>
+</div>
+<div class="col-md-10">
+	<div class="page-header">
+		<h4>合作伙伴</h4>
+	</div>
+	<div class="col-md-2">
+		<img style="width:120px;height:120px" src="__PUBLIC__/images/北航.jpg"></img>
+		<p style="text-align:center">北京航空航天大学</p>
+	</div>
+		<div class="col-md-2">
+		<img style="width:120px;height:120px" src="__PUBLIC__/images/哈工大.jpg"></img>
+		<p style="text-align:center">哈尔滨工业大学</p>
+	</div>
+		<div class="col-md-2">
+		<img style="width:120px;height:120px" src="__PUBLIC__/images/上交大.jpg"></img>
+		<p style="text-align:center">上海交通大学</p>
+	</div>
+		<div class="col-md-2">
+		<img style="width:120px;height:120px" src="__PUBLIC__/images/浙大.jpg"></img>
+		<p style="text-align:center">浙江大学</p>
+	</div>
+		<div class="col-md-2">
+		<img style="width:120px;height:120px" src="__PUBLIC__/images/emc2.jpg"></img>
+		<p style="text-align:center">EMC2</p>
+	</div>
+</div>

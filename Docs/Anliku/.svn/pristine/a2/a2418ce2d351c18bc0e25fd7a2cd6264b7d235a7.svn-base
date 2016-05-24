@@ -1,0 +1,23 @@
+body
+{
+  font-family:"Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","WenQuanYi Micro Hei";
+}
+.case-mid-fonter{
+  font-size:45px;
+}
+.case-big-fonter
+{
+  font-size:50px;
+}
+@font-face {
+  font-family: SourceHanSansCN-ExtraLight;
+  src:url("__PUBLIC__/fonts/SourceHanSansCN-ExtraLight.otf");
+}
+.case-siyuan-fonter
+{
+  font-family: SourceHanSansCN-ExtraLight,Lato,"Helvetica Neue",Arial,'Microsoft Yahei','Hiragino Sans GB','WenQuanYi Micro Hei',sans-serif;
+}
+.case-broad-fonter
+{
+  letter-spacing: 4px;
+}

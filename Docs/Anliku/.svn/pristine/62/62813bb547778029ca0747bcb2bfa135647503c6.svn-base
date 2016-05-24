@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<include file="Public:header" />
+<body>
+	<include file="Public:menubar" />
+<div class="container" >
+	{__CONTENT__}
+</div>
+	<include file="Public:footer" />
+</body>
+</html>
