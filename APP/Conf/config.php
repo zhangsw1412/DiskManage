@@ -27,7 +27,7 @@ return array(
 	//'TMPL_FILE_DEPR'=>'_',
 
 	//显示页面调试工具
-	'SHOW_PAGE_TRACE'=>true,
+	'SHOW_PAGE_TRACE'=>false,
 
 	//路由模式
 	'URL_MODEL'=>2,
