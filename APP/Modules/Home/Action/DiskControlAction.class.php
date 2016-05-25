@@ -94,4 +94,22 @@
             $unused=$total-$used;
             $this->ajaxReturn(['succ'=>$succ,'fail'=>$fail,'unused'=>$unused],'json');
         }
+
+        /**
+         * 服务控制
+         * @return [type] [description]
+         */
+        public function service()
+        {
+            exec('ls -la',$result,$status);
+            p($status);
+            $to="zhangshanwen@mioji.com";
+            $subject="Service Start";
+            $message="The NFS service is started successfully at ".date('Y-m-d H:i:s',time());
+			$result=sendMail($to,'zhangsw',$subject,$message);
+			if($result!==true)
+				var_dump($result);
+            layout('Layout/standard');
+            $this->display();
+        }
     }

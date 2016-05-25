@@ -11,6 +11,15 @@ return array(
 		'__PUBLIC__'=>__ROOT__.'/'.APP_NAME.'/Modules/'.GROUP_NAME.'/Tpl/Public',
 		),
 
+	'EMAIL'=>array(
+			'SMTP_HOST'=>'smtp.163.com',
+			'SMTP_PORT'=>'465',
+			'SMTP_USER'=>'duduteddy@163.com',
+			'SMTP_PASS'=>'dyx251314',
+			'FROM_EMAIL'=>'duduteddy@163.com',
+			'FROM_NAME'=>'Service Disk'
+		)
+
 	//开启页面静态缓存
 	// 'HTML_CACHE_ON'=>true,
 
