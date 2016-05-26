@@ -29,7 +29,7 @@ function sendMail($to,$name,$subject='',$body='',$attachment=null)
 	$mail->Subject=$subject;
 	$mail->AltBody="为了查看该邮件，请切换到支持HTML的邮件客户端";
 	$mail->MsgHTML($body);
-	$mail->AddAddress($to,$name);
+	$mail->AddAddress($to);
 	if(is_array($attachment))
 	{
 		foreach($attachment as $file)
