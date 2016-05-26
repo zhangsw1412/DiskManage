@@ -101,6 +101,7 @@
          */
         public function service()
         {
+			//TODO:complete the service control
             exec('ls -la',$result,$status);
             p($status);
             $to="zhangshanwen@mioji.com";
