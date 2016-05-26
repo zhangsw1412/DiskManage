@@ -104,10 +104,10 @@
 			//TODO:complete the service control
             exec('ls -la',$result,$status);
             p($status);
-            $to="zhangshanwen@mioji.com";
+            $to="zhangsw_1412@foxmail.com";
             $subject="Service Start";
             $message="The NFS service is started successfully at ".date('Y-m-d H:i:s',time());
-			$result=sendMail($to,'zhangsw',$subject,$message);
+			$result=sendMail($to,'service',$subject,$message);
 			if($result!==true)
 				var_dump($result);
             layout('Layout/standard');
