@@ -29,11 +29,10 @@ class SystemConfigAction extends Action
 		if(IS_POST)
 		{
 			$rackParams=M('init_params');
-			$result=$rackParams->find(1);
-			if(!$result)
-				$this->error('数据库查询出错');
+			$result=$rackParams->find();
+			if($result)
+				$this->error('已存在配置，请联系管理员更改','',5);
 			$data=array(
-				'id' => 1,
 				'write_channel_timeout' => I('post.write_channel_timeout'),
 				'readCacheSize' => I('post.readCacheSize'),
 				'NFS_read_size' => I('post.NFS_read_size'),
@@ -44,7 +43,7 @@ class SystemConfigAction extends Action
 				'linkPre' => I('post.linkPre'),
 				'dirPre' => I('post.dirPre')
 				);
-			if($rackParams->save($data)===false)
+			if($rackParams->add($data)===false)
 				$this->error('写入数据库失败');
 			$this->success('配置成功');
 		}
@@ -73,11 +72,10 @@ class SystemConfigAction extends Action
 		if(IS_POST)
 		{
 			$rackParams=M('rack_params');
-			$result=$rackParams->find(1);
-			if(!$result)
-				$this->error('数据库查询出错');
+			$result=$rackParams->find();
+			if($result)
+				$this->error('已存在配置，请联系管理员更改','',5);
 			$data=array(
-				'id' => 1,
 				'box_cds' => I('post.box_cds'),
 				'rows' => I('post.rows'),
 				'layers' => I('post.layers'),
@@ -85,7 +83,7 @@ class SystemConfigAction extends Action
 				'eachBlockSize' => I('post.eachBlockSize'),
 				'eachCdSize' => I('post.eachCdSize')
 				);
-			if($rackParams->save($data)===false)
+			if($rackParams->add($data)===false)
 				$this->error('写入数据库失败');
 			F('sysparam',I('post.'),CONF_PATH);
 			$this->success('配置成功');
