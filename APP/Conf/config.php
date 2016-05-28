@@ -44,11 +44,11 @@ return array(
 	'LOG_RECORD' => true,
 
 	//数据库配置
-	'DB_HOST'=>'127.0.0.1',
+	'DB_HOST'=>'192.168.3.123',
 	'DB_TYPE'=>'mysql',
 	'DB_NAME'=>'db_diskManage',
-	'DB_USER'=>'root',//换成本地的数据库用户和密码
-	'DB_PWD'=>'592307@zsw',
+	'DB_USER'=>'yjl',//换成本地的数据库用户和密码
+	'DB_PWD'=>'yjl',
 	'DB_PORT'=>3306,
 	'DB_PREFIX'=>'tb_'
 );

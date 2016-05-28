@@ -11,7 +11,7 @@ return array(
 		'__PUBLIC__'=>__ROOT__.'/'.APP_NAME.'/Modules/'.GROUP_NAME.'/Tpl/Public',
 		),
 
-	'ROOT_DIR'=>'/Users/zhangsw'
+	'ROOT_DIR'=>'/home/zhangsw/nfs'
 
 	//开启页面静态缓存
 	// 'HTML_CACHE_ON'=>true,
