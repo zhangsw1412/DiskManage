@@ -150,6 +150,7 @@ class FileManageAction extends Action
 		if($sub{0}==='(')
 			$sub=substr_replace($sub, ".", 0, 1);
 
+        Log::write('下载文件'.$base.'/'.$sub,Log::INFO);
 		import('ORG.Net.Http');
 		$download=new Http();
 		$download->download($base.'/'.$sub,$sub);
