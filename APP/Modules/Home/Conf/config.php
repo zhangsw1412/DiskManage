@@ -11,10 +11,11 @@ return array(
 		'__PUBLIC__'=>__ROOT__.'/'.APP_NAME.'/Modules/'.GROUP_NAME.'/Tpl/Public',
 		),
 
-	'ROOT_DIR'=>'/home/zhangsw/nfs'
+	'ROOT_DIR'=>'/home/zhangsw'
 
-	//开启页面静态缓存
-	// 'HTML_CACHE_ON'=>true,
+	//关闭页面静态缓存
+    'HTML_CACHE_ON'=>false,
+    'TMPL_CACHE_ON'=>false,
 
 	//开启模板
 	// 'LAYOUT_ON'=>true,
