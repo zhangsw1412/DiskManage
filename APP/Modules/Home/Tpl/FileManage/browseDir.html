@@ -1,8 +1,13 @@
+<script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/uploadify/uploadify.css">
 <a href="{:U(GROUP_NAME.'/FileManage/goBack',array('path'=>$path,'place'=>'no'))}" class="btn btn-primary"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;返回上级目录</a>&nbsp;&nbsp;&nbsp;
 <a href="javascript:void(0);" id="create_a" data-toggle="modal" data-target="#create" class="btn btn-success"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;创建文件夹</a>&nbsp;&nbsp;&nbsp;
-<a href="javascript:void(0);" id="upload_a" data-toggle="modal" data-target="#upload" class="btn btn-danger"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;上传文件至此目录</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:void(0);" id="upload_a" data-toggle="collapse" data-target="#zhedie" class="btn btn-danger"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;上传文件至此目录</a>&nbsp;&nbsp;&nbsp;
 <div class="checkbox" style="display: inline-block;">
 	<label style="padding: 15px" ><input id="show_cb" type="checkbox" onclick="showHidden();">显示隐藏文件</label>
+</div>
+<div class="collapse" id="zhedie">
+	<input type="file" multiple="ture" id="file_upload" name="file_upload">
 </div>
 <div align="center">
 	<h3>当前路径:{$path|str_replace=')','/',###}</h3>
@@ -68,36 +73,6 @@
 	</div>
 </div>
 
-<div class="modal fade" id="upload" tabindex="-1">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button class="close" data-dismiss="modal"><span>&times;</span></button>
-				<h4 class="modal-title">上传文件</h4>
-			</div>
-			<div class="modal-body">
-				<div class="container-fluid">
-					<div class="row">
-						<form id="upload_form" enctype="multipart/form-data" action="{:U(GROUP_NAME.'/FileManage/uploadFile')}" method="post" class="form-horizontal">
-							<div class="form-group">
-								<label class="col-sm-2 control-label">文件:</label>
-								<div class="col-sm-7">
-									<input type="file" name="fileToUpload" class="form-control">
-									<input type="text" class="sr-only" name="path" value="{$path}">
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-			<button class="btn btn-success" onclick="$('#upload_form').submit();">上传</button>
-			<button class="btn btn-primary" data-dismiss="modal">关闭</button>
-			</div>
-		</div>
-	</div>
-</div>
-
 <script type="text/javascript">
 	function showHidden(){
 		var show=$('#show_cb').prop('checked');
@@ -109,4 +84,31 @@
 				$(this).hide();
 		});
 	}
+
+	$(function(){
+		$('#file_upload').uploadify({
+			'swf':'__PUBLIC__/uploadify/uploadify.swf',
+			'uploader':"{:U(GROUP_NAME.'/FileManage/uploadFile')}",
+			'auto':true,
+			'multi':false,
+			'progressData':'speed',
+			'formData':{
+				'path':'{$path}'
+			},
+			'method':'post',
+			'buttonText':'选择文件',
+			'onUploadSuccess':function(file,data,response){
+				data=jQuery.parseJSON(data);
+				if(data.status==0)
+				{
+					//alert(file.name+'上传成功');
+					document.location.reload()
+				}
+				else if(data.status==1)
+				{
+					alert(data.info);
+				}
+			}
+		});
+	});
 </script>
