@@ -125,11 +125,15 @@ class FileManageAction extends Action
 			$upload->saveRule=null;
 			if($upload->upload())
 			{
-				$this->success('上传成功');
+				$data['status']=0;
+				$data['info']="";
+				$this->ajaxReturn($data,'JSON');
 			}
 			else
 			{
-				$this->error($upload->getErrorMsg());
+				$data['status']=1;
+				$data['info']=$upload->getErrorMsg();
+				$this->ajaxReturn($data,'JSON');
 			}
 		}
 		else
