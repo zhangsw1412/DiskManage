@@ -9,6 +9,9 @@
 <div class="collapse" id="zhedie">
 	<input type="file" multiple="ture" id="file_upload" name="file_upload">
 </div>
+<div class="alert fade in hidden" id="result">
+	<button class="close" data-dismiss="alert"><span>&times;</span></button>
+</div>
 <div align="center">
 	<h3>当前路径:{$path|str_replace=')','/',###}</h3>
 </div>
@@ -102,11 +105,22 @@
 				if(data.status==0)
 				{
 					//alert(file.name+'上传成功');
-					document.location.reload()
+					$('#result').append(file.name+'上传成功');
+					$('#result').addClass('alert-success');
+					$('#result').removeClass('hidden');
+					setTimeout(function(){
+						document.location.reload();
+					},1500);
+					
 				}
 				else if(data.status==1)
 				{
-					alert(data.info);
+					$('#result').append(data.info);
+					$('#result').addClass('alert-danger');
+					$('#result').removeClass('hidden');
+					setTimeout(function(){
+						document.location.reload();
+					},3000);
 				}
 			}
 		});
