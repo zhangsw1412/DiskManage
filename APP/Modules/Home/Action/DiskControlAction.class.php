@@ -113,4 +113,24 @@
             layout('Layout/standard');
             $this->display();
         }
+
+        /**
+         * 光盘读取历史记录
+         */
+        public function diskReadHistory()
+        {
+            import('Class.Page', APP_PATH);
+            $count = M('boxreadhistory')->count();
+            $page = new Page($count, 20);
+            $limit = $page->firstRow . ',' . $page->listRows;
+
+            $records = M('boxreadhistory')->order('loadTime desc')->limit($limit)->select();
+            if ($records === false)
+                $this->error('数据库查询失败');
+            $this->records = $records;
+            $this->page = $page->show();
+
+            layout('Layout/standard');
+            $this->display();
+        }
     }
