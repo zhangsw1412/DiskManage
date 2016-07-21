@@ -94,4 +94,43 @@
             $unused=$total-$used;
             $this->ajaxReturn(['succ'=>$succ,'fail'=>$fail,'unused'=>$unused],'json');
         }
+
+        /**
+         * 服务控制
+         * @return [type] [description]
+         */
+        public function service()
+        {
+			//TODO:complete the service control
+            exec('ls -la',$result,$status);
+            p($status);
+            $to="zhangsw_1412@foxmail.com";
+            $subject="Service Start";
+            $message="The NFS service is started successfully at ".date('Y-m-d H:i:s',time());
+			$result=sendMail($to,'service',$subject,$message);
+			if($result!==true)
+				var_dump($result);
+            layout('Layout/standard');
+            $this->display();
+        }
+
+        /**
+         * 光盘读取历史记录
+         */
+        public function diskReadHistory()
+        {
+            import('Class.Page', APP_PATH);
+            $count = M('boxreadhistory')->count();
+            $page = new Page($count, 20);
+            $limit = $page->firstRow . ',' . $page->listRows;
+
+            $records = M('boxreadhistory')->order('loadTime desc')->limit($limit)->select();
+            if ($records === false)
+                $this->error('数据库查询失败');
+            $this->records = $records;
+            $this->page = $page->show();
+
+            layout('Layout/standard');
+            $this->display();
+        }
     }

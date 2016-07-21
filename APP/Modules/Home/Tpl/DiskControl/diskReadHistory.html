@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/pagination.css">
+<table class="table table-striped">
+    <caption class="text-center"><h2>盘盒读取历史记录</h2></caption>
+    <thead>
+    <tr>
+        <th class="text-center" style="vertical-align: middle;">机架号</th>
+        <th class="text-center" style="vertical-align: middle;">层号</th>
+        <th class="text-center" style="vertical-align: middle;">柱号</th>
+        <th class="text-center" style="vertical-align: middle;">小层号</th>
+        <th class="text-center" style="vertical-align: middle;">时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <foreach name='records' item='record'>
+        <tr>
+            <td class="text-center" style="vertical-align: middle;">{$record.rackId}</td>
+            <td class="text-center" style="vertical-align: middle;">{$record.layerNum}</td>
+            <td class="text-center" style="vertical-align: middle;">{$record.columnNum}</td>
+            <td class="text-center" style="vertical-align: middle;">{$record.rowNum}</td>
+            <td class="text-center" style="vertical-align: middle;">{$record.loadTime|date='Y/m/d H:i:s',###}</td>
+        </tr>
+    </foreach>
+    </tbody>
+</table>
+<div align="center">
+    <div class="pagination">{$page}</div>
+</div>
